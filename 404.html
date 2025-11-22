@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - הדף לא נמצא | K-Nails</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .error-container {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            padding: var(--spacing-md);
+            max-width: 600px;
+        }
+
+        .error-icon {
+            font-size: 8rem;
+            margin-bottom: var(--spacing-md);
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .error-suggestions {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            margin-bottom: var(--spacing-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .error-suggestions h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .error-suggestions ul {
+            list-style: none;
+            text-align: right;
+        }
+
+        .error-suggestions li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            justify-content: flex-end;
+        }
+
+        .error-suggestions li i {
+            color: var(--accent-color);
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+
+        .nail-decoration {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 3rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .nail-decoration:nth-child(1) {
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .nail-decoration:nth-child(2) {
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        .nail-decoration:nth-child(3) {
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .nail-decoration:nth-child(4) {
+            bottom: 40%;
+            left: 10%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+
+            .error-icon {
+                font-size: 5rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <!-- Floating nail decorations -->
+        <i class="fas fa-hand-sparkles nail-decoration"></i>
+        <i class="fas fa-gem nail-decoration"></i>
+        <i class="fas fa-spa nail-decoration"></i>
+        <i class="fas fa-heart nail-decoration"></i>
+
+        <div class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-hand-paper"></i>
+            </div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">אופס! הדף לא נמצא</h1>
+            <p class="error-message">
+                נראה שהציפורן שלך החליקה למקום הלא נכון...
+                הדף שחיפשת לא קיים או הועבר למיקום אחר.
+            </p>
+
+            <div class="error-suggestions">
+                <h3>אולי את מחפשת את אחד מאלה?</h3>
+                <ul>
+                    <li>
+                        <span>הדף הראשי</span>
+                        <i class="fas fa-home"></i>
+                    </li>
+                    <li>
+                        <span>השירותים שלנו</span>
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </li>
+                    <li>
+                        <span>שאלות נפוצות</span>
+                        <i class="fas fa-question-circle"></i>
+                    </li>
+                    <li>
+                        <span>יצירת קשר</span>
+                        <i class="fas fa-phone"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="error-buttons">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> חזרה לדף הבית
+                </a>
+                <a href="/#services" class="btn btn-secondary">
+                    <i class="fas fa-hand-sparkles"></i> השירותים שלנו
+                </a>
+                <a href="/#contact" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> יצירת קשר
+                </a>
+            </div>
+
+            <p style="margin-top: var(--spacing-md); opacity: 0.8; font-size: 0.9rem;">
+                זקוקה לעזרה? <a href="/#contact" style="color: var(--accent-color); text-decoration: underline;">צרי איתנו קשר</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

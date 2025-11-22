@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שגיאה | K-Nails</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #b8325f 0%, #8b1a47 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .error-container {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            padding: var(--spacing-md);
+            max-width: 700px;
+        }
+
+        .error-icon {
+            font-size: 7rem;
+            margin-bottom: var(--spacing-md);
+            animation: pulse 2s ease-in-out infinite;
+            opacity: 0.9;
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-message {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .error-submessage {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .error-details {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            margin-bottom: var(--spacing-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .error-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            justify-content: center;
+        }
+
+        .error-details p {
+            line-height: 1.7;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .error-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+
+        .retry-btn {
+            background-color: var(--white);
+            color: #8b1a47;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .retry-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .nail-decoration {
+            position: absolute;
+            opacity: 0.08;
+            font-size: 4rem;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .nail-decoration:nth-child(1) {
+            top: 5%;
+            right: 8%;
+            animation-delay: 0s;
+        }
+
+        .nail-decoration:nth-child(2) {
+            bottom: 10%;
+            left: 12%;
+            animation-delay: 1.5s;
+        }
+
+        .nail-decoration:nth-child(3) {
+            top: 50%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .nail-decoration:nth-child(4) {
+            bottom: 35%;
+            left: 8%;
+            animation-delay: 2s;
+        }
+
+        .nail-decoration:nth-child(5) {
+            top: 25%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(5deg);
+            }
+        }
+
+        .help-section {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-sm);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .help-section p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .help-section a {
+            color: var(--accent-color);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .error-icon {
+                font-size: 4.5rem;
+            }
+
+            .error-title {
+                font-size: 1.8rem;
+            }
+
+            .error-message {
+                font-size: 1.1rem;
+            }
+
+            .error-submessage {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <!-- Floating nail decorations -->
+        <i class="fas fa-hand-sparkles nail-decoration"></i>
+        <i class="fas fa-gem nail-decoration"></i>
+        <i class="fas fa-spa nail-decoration"></i>
+        <i class="fas fa-heart nail-decoration"></i>
+        <i class="fas fa-star nail-decoration"></i>
+
+        <div class="error-container">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1 class="error-title">אופס! משהו השתבש</h1>
+            <p class="error-message">
+                נראה שהציפורניים שלנו לא מושלמות כרגיל...
+            </p>
+            <p class="error-submessage">
+                התקלנו בבעיה טכנית זמנית. אנחנו כבר עובדים על זה!
+            </p>
+
+            <div class="error-details">
+                <h3>
+                    <i class="fas fa-tools"></i>
+                    מה קורה?
+                </h3>
+                <p>
+                    השרת שלנו נתקל בבעיה או שהאתר נמצא כרגע בתחזוקה.
+                    זה בדרך כלל מצב זמני והכל יחזור לעבוד בקרוב.
+                </p>
+                <p style="margin-top: var(--spacing-sm);">
+                    <strong>מה את יכולה לעשות?</strong>
+                </p>
+                <ul style="list-style: none; padding: 0; margin-top: var(--spacing-xs);">
+                    <li>✨ נסי לרענן את הדף</li>
+                    <li>✨ המתיני מספר דקות ונסי שוב</li>
+                    <li>✨ בדקי את החיבור לאינטרנט שלך</li>
+                    <li>✨ צרי איתנו קשר ישירות דרך WhatsApp</li>
+                </ul>
+            </div>
+
+            <div class="error-buttons">
+                <button onclick="location.reload()" class="btn retry-btn">
+                    <i class="fas fa-redo"></i> נסי שוב
+                </button>
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> חזרה לדף הבית
+                </a>
+                <a href="https://wa.me/972" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <div class="help-section">
+                <p>
+                    הבעיה נמשכת?
+                    <a href="/#contact">צרי איתנו קשר</a>
+                    ונשמח לעזור!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-retry after 5 seconds
+        let countdown = 30;
+        const autoRetry = setInterval(() => {
+            countdown--;
+            if (countdown <= 0) {
+                clearInterval(autoRetry);
+                // Uncomment the next line if you want auto-reload
+                // location.reload();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
